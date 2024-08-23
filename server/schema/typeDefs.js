@@ -18,7 +18,7 @@ const typeDefs = gql`
     }
 
     type Query {
-        getUser: User
+        getUser: AuthResponse
     } 
 
     type Mutation {
