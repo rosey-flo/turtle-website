@@ -1,11 +1,11 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink, useNavigate} from 'react-router-dom'
 import { useMutation, useApolloClient } from '@apollo/client'
 
 import { LOGOUT_USER } from '../graphql/mutations'
 
 
 function Header(props) {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const client = useApolloClient()
 
     const [logoutUser] = useMutation(LOGOUT_USER)

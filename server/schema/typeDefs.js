@@ -12,7 +12,7 @@ const typeDefs = gql`
         _id: ID
         name: String
         weapon: String
-        heabandColor: String
+        headbandColor: String
         user: User
     }
 

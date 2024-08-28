@@ -16,7 +16,7 @@ export const GET_USER_TURTLE = gql`
     query GetUserTurtle {
     getUserTurtle {
         _id
-        heabandColor
+        headbandColor
         name
         weapon
   }
@@ -27,7 +27,7 @@ export const GET_ALL_TURTLES = gql`
    query GetAllTurtles {
     getAllTurtles {
         _id
-        heabandColor
+        headbandColor
         name
         user {
         username

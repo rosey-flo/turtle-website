@@ -76,9 +76,9 @@ header {
   }
   a.dashboard-link {
     color:#eee;
+    margin-right: 10px;
     &:hover, &.active {
       text-decoration:underline;
-      margin-right: 10px;
     }
   }
   button {

@@ -38,10 +38,11 @@ const resolvers = {
     async getUserTurtle(_, args, context) {
       const token = context.req.cookies.token;
 
+      
       if (!token) {
-        throw new GraphQLError({
-          message: 'Not Authorized'
-        })
+        return {
+          useR: null
+        }
       }
 
       const { user_id } = verify(token, process.env.JWT_SECRET);
@@ -53,7 +54,7 @@ const resolvers = {
     },
 
     async getAllTurtles(_, args, context) {
-      
+
 
       const turtles = await Turtle.find().populate('user')
 
@@ -156,7 +157,7 @@ const resolvers = {
 
     async deleteTurtle(_, args, context) {
       const token = context.req.cookies.token;
-      
+
       if (!token) {
         throw new GraphQLError({
           message: 'Not Authorized'
@@ -167,23 +168,23 @@ const resolvers = {
 
       const user = await User.findById(user_id);
 
-      if(!user.turtles.includes(args.turtle_id)) {
+      if (!user.turtles.includes(args.turtle_id)) {
         throw new GraphQLError({
           message: 'You cannot delete a turtle you have not created'
         })
       }
-        
-       await Turtle.deleteOne({
+
+      await Turtle.deleteOne({
         _id: args.turtle_id
-       })
+      })
 
-       user.turtles.pull(args.turtle_id);
+      user.turtles.pull(args.turtle_id);
 
-       await user.save()
+      await user.save()
 
-       return {
+      return {
         message: 'Turtle deleted successfully'
-       }
+      }
     }
 
   }

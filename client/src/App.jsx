@@ -20,7 +20,7 @@ function App() {
       setUser(data.getUser.user)
       //matches the query on get user from graphql to the resolver get user data
     }
-  }, [data, user, loading])
+  }, [data])
   //runs it again so that on second round, which should now be truthy, will rnu the entire code
 
   return (

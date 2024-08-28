@@ -72,7 +72,7 @@ function Dashboard() {
             <section className='turtle-container'>
                 <h1>Your Turtles:</h1>
 
-                {/* {turtleData?.getAllTurtles.length && <h2>No Turtles have been added</h2>} */}
+                {!turtleData?.getUserTurtle.length && <h2>No Turtles have been added</h2>}
 
                 <div className='turtle-output'>
                     {turtleData?.getUserTurtle.map(turtleObj => (
@@ -80,7 +80,7 @@ function Dashboard() {
                             <h3>{turtleObj.name}</h3>
                             <p>Weapon: {turtleObj.weapon}</p>
                             <p>Headband: {turtleObj.headbandColor}</p>
-                            <button onClick={() => {handleDeleteTurtle(turtleObj.id)}}>Delete</button>
+                            <button onClick={() => {handleDeleteTurtle(turtleObj._id)}}>Delete</button>
                         </article>
                         ))}
                 </div>

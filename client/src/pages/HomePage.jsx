@@ -12,7 +12,7 @@ function HomePage() {
             <section className='turtle-container'>
                 <h1>See all Created Turtles:</h1>
 
-                {turtleData?.getAllTurtles.length && <h2>No Turtles have been adeed</h2>}
+                {!turtleData?.getAllTurtles.length && <h2>No Turtles have been adeed</h2>}
 
                 <div className='turtle-output'>
                     {turtleData?.getAllTurtles.map(turtleObj => (
