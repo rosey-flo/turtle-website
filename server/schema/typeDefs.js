@@ -8,6 +8,14 @@ const typeDefs = gql`
         email: String
     }
 
+    type Turtle {
+        _id: ID
+        name: String
+        weapon: String
+        heabandColor: String
+        user: User
+    }
+
     type Response {
         message: String
     }
@@ -19,11 +27,20 @@ const typeDefs = gql`
 
     type Query {
         getUser: AuthResponse
+        getUserTurtle: [Turtle]
+        getAllTurtles: [Turtle]
     } 
 
     type Mutation {
+
+        #User Mutations
         registerUser(username: String, email: String, password: String): AuthResponse
-        loginUser(email: String, password: String) : AuthResponse
+        loginUser(email: String, password: String): AuthResponse
+        logoutUser: AuthResponse
+
+        # Turtle Mutations
+        addTurtle(name: String, weapon: String, headbandColor: String): Turtle
+        deleteTurtle(turtle_id: ID): Response
     } 
 `;
 
