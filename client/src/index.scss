@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,  body {
+  height: 100%;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  width: 80%;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+// GLOBAL CLASSES
+.row, .column {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+// CUSTOM STYLES
+.overlay {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index: 500;
+  // background:#eeeeee51;
+  background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.5)), url(/images/ninja-t.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  h1 {
+    color:#83a580ea;
+    text-shadow: 1px 1px 5px #000;
+  }
+}
+
+header {
+  padding: 10px 5%;
+  background: #10700977;
+  color: #eee;
+  // margin-bottom: 25px;
+  p {
+    margin-right: 15px;
+  }
+  a.dashboard-link {
+    color:#eee;
+    &:hover, &.active {
+      text-decoration:underline;
+      margin-right: 10px;
+    }
+  }
+  button {
+    background: none;
+    border: 1px solid #eee;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: all .3s;
+    &:hover {
+      background-color: #eee;
+      color:#10700977
+    }
+  }
+  nav {
+    a {
+      color: #eee;
+      &:not(:last-child) {
+        margin-right: 7px;
+      }
+      &.active, &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+//HOMEPAGE STYLES
+section.hero {
+  background-image: url(/images/ninja-t.jpeg);
+  height: 535px;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+form {
+   width: 400px;
+   margin:25px auto;
+   > * {
+    padding:6px 10px;
+    margin-bottom: 6px;
+   }
+   h2 {
+    color: #10700977
+   }
+   button {
+    background: #10700977;
+    color:#eee;
+    border: none;
+    padding: 7px 0;
+    font-size: 1rem;
+   }
+
+   p {
+    color:#10700977;
+    &.error-message {
+      color: #fc224d
+    }
+    span {
+      color: chartreuse;
+      cursor:pointer;
+    }
+   }
+}
+
+// Turtle Styles
+section.turtle-container {
+  padding: 25px 5%;
+
+  h1 {
+    color: green;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size:1.2 rem;
+    color:#4f4f4f
+  }
+
+  .turtle-output {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    article {
+      border: 3px solid green;
+      padding: 20px;
+      border-radius: 10px;
+      h3 {
+        color: green;
+      }
+
+      p {
+        color: #777;
+        margin-top: 5px;
+      }
+      button {
+        margin-top: 8px;
+        background: #d14b71;
+        color: #fff;
+        padding: 4px 8px;
+        border: none;
+        border-radius: 3px;
+      }
+    }
+  }
+}
